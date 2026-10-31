@@ -1,12 +1,10 @@
-﻿from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
     app_name: str = "SubLedger"
     app_version: str = "1.0.0"
-    database_url: str = (
-        "postgresql+psycopg://postgres:postgres@localhost:5432/subledger_db"
-    )
+    database_url: str
 
     model_config = SettingsConfigDict(
         env_file=".env",
